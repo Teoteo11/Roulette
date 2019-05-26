@@ -16,12 +16,11 @@ public class Game {
     }
 
     public String bet(int num) {
-        String s1 = "Win";
-        String s2 = "Lose";
-        String s3 = "Il numero inserito è errato!";
+        String s1 = "You Win";
+        String s2 = "You Lose";
         if (num >= 0) {
-            for (int var : redNumbers) {
-                if (var == num) {
+            for (int i : redNumbers) {
+                if (i == num) {
                     if (num == random()) {
                         p.setCredit(500 * 36);
                         return s1;
@@ -30,8 +29,8 @@ public class Game {
                         return s2;}
                 }
             }
-            for (int var2 : blackNumbers) {
-                if (var2 == num) {
+            for (int j : blackNumbers) {
+                if (j == num) {
                     if (num == random()) {
                         p.setCredit(500 * 36);
                         return s1;
@@ -42,10 +41,9 @@ public class Game {
                 }
             }
         }
-        return s3;
-    }
+       }
 
-    //metodo che mi genera in modo casuale dei numeri compresi tra 0 e 36
+    
     public int random() {
         Random random = new Random();
         int number = random.nextInt(37);
